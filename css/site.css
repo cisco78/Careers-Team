@@ -1,0 +1,43 @@
+body {
+    background-image: url("../images/fresh-background.jpg"); 
+    background-size:   cover;                     
+    background-repeat: no-repeat;
+    background-position: center center; 
+}
+
+.main-icon img {
+    max-height: 100px; 
+    max-width: 100px; 
+}
+
+.page-icon img {
+    max-height: 140px;
+    max-width: 140px;
+} 
+
+.box-shadow {
+    -webkit-box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.75);
+} 
+
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+
+
+
+.icon-bar {
+    background-color:#000000 
+}
+
+
+a { 
+    color:#000000;
+    text-decoration:none;
+} 

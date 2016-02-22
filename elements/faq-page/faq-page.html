@@ -1,0 +1,145 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+
+<link rel="import" href="../../bower_components/neon-animation/neon-animatable-behavior.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/slide-from-right-animation.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/slide-right-animation.html">
+
+
+<dom-module id="faq-page">
+
+  <style>
+    :host {
+      display: block;
+      font-family: 'Roboto', sans-serif;
+    }
+    .container {
+    } 
+    .content {
+      padding: 56px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .rows {
+      margin: 56px 0;
+    }
+    label {
+      font-size: 18px;
+    } 
+    .icon {
+      max-width:250px;
+    }
+     
+  </style>  
+
+  <template>
+    <paper-header-panel class="flex layout vertical">
+      <paper-toolbar>
+        <div class="title flex">FREQUENTLY ASKED QUESTIONS</div>   
+        <paper-icon-button icon="cancel" on-tap="showMain"></paper-icon-button>   
+      </paper-toolbar>
+        <div class="container">
+            <div class="row" style="padding:10px;">
+                <div class="row box box-shadow" style="margin-top:15px; padding:10px;">
+                    <div class="col-md-6" style="padding:20px;">
+                        <div align="center">
+                            <h2>What is mediation?</h2>
+                        </div>
+                        <p>Mediation is a non-adversarial process for resolving disputes through dialogue. An independent third party, known as a Mediator, facilitates a conversation between the parties that are in dispute, with a view to helping them reach a satisfactory outcome.</p>
+                        
+                        <div align="center">
+                            <h2>What happens during the mediation process?</h2>
+                        </div>
+                        <p>Once an enquiry or referral is received by the Mediation Service, the Mediation Coordinator will contact the relevant parties to discuss the process and assess whether mediation is suitable.</p>
+                        <p>Following this, should mediation be suitable, two Mediators will be assigned to the case. They will contact the parties by phone to talk them through the mediation process and answer any questions they might have. The Mediators will meet with both parties, separately at first, to give each party the opportunity to look at the issues that may be causing the conflict and to talk through possible solutions.</p>
+                        <p>If both parties agree, a Joint Meeting will be facilitated by the Mediators. This session brings both parties together to explore the issues in more detail and engage in constructive dialogue. Both parties are given the opportunity to explain how they feel and what they would like to happen in the future, working towards a joint agreement that concentrates on restoring a positive working relationship.</p>
+                        
+                        <div align="center">
+                            <h2>How long does mediation last?</h2>
+                        </div>
+                        <p>Mediation usually lasts for one full day. However, in more complex cases or in cases involving more than two parties, it may last for up to three days.</p>
+                        <div align="center">
+                            <h2>In what circumstances would I use mediation?</h2>
+                        </div>
+                        <p>Mediation lends itself well to addressing many of the common conflicts that exist in the workplace. It is one of the most effective and successful ways of resolving conflict, and is particularly effective when there is a need or wish to maintain relationships.</p>
+                        <h3>Examples of circumstances where mediation can help include:</h3>
+                        <ul>
+                            <li>Conflict between colleagues, teams, or with your manager.</li>
+                            <li>Conflict over working practices.</li>
+                            <li>Communication difficulties.</li>
+                            <li>Repairing working relationships.</li>
+                            <li>Recurrent misunderstandings which are causing anxiety.</li>
+                            <li>Conflicting perceptions of performance, which can lead to a grievance or accusations of discrimination.</li>
+                            <li>A conflict arising out of allegations of discrimination, or unfair or unequal treatment.</li>
+                            <li>An allegation of bullying or harassment.</li>
+                        </ul> 
+                    </div> 
+                    <div class="col-md-6" style="padding:20px;">
+                        <div align="center">
+                            <h2>Is mediation confidential?</h2>
+                        </div>
+                        <p>Yes. Both parties sign a confidentiality agreement at the first meeting. Mediators will not disclose anything that has been said during the mediation process without the express permission of the parties. If agreed by both parties, Mediators will provide a copy or summary of the final agreement to the person who sponsored the mediation. Other than a copy of the agreement all notes taken during the process are destroyed, including the notes made for the Joint Meeting. Mediators do not provide evidence in any formal process or employment tribunal.</p>
+                        <div align="center">
+                            <h2>If I use the mediation service will I give up my right to use other more formal processes?</h2>
+                        </div>
+                        <p>No. If mediation does not provide you with a satisfactory outcome, you will still be able to use formal processes such as the grievance process. In the event that the parties opt for mediation during the course of a formal process, for example in the course of a grievance process, the formal process will be suspended. If no satisfactory outcome is reached during the mediation process, the formal process can be reactivated.</p>
+                        
+                        <div align="center">
+                            <h2>Do I have to use the mediation service if someone refers me to the Service?</h2>
+                        </div>
+                        <p>No. Mediation is a voluntary process and you are free to decide whether or not to participate. You are not committing yourself to the process by making contact with the Mediation Service, in fact, you can opt out at any point should you feel the process is not for you.</p>
+                        <div align="center">
+                            <h2>Can I bring someone with me during mediation?</h2>
+                        </div>
+                        <p>Whilst we recognise that you may wish to have someone with you during the mediation, the Mediators will ensure that there is a safe environment where you do not need to bring anyone to support you through this informal process.</p>
+                        
+                        <div align="center">
+                            <h2>Does mediation work?</h2> 
+                        </div>
+                        <p>Yes. It is widely reported by businesses that mediation successfully resolves around 90% of workplace disputes. However, for mediation to work it requires a commitment from all parties to engage in the process and aspire to finding a positive resolution. When parties enter into mediation with a willingness to listen and to respect each other, to challenge and to be challenged, and to seek a new way of working together, there is a good chance that mediation will work. </p>
+                    </div> 
+                </div> 
+            </div>
+        </div> 
+    </paper-header-panel> 
+  </template>
+
+  <script>  
+    Polymer({
+
+      is: 'faq-page',
+
+      behaviors: [Polymer.NeonAnimatableBehavior],
+
+      properties: {
+        animationConfig: {
+          value: function() {
+            return {
+              'entry': {
+                name: 'slide-from-right-animation',
+                node: this,
+                timing: {duration: 2000}
+              },
+              'exit': {
+                name: 'slide-right-animation',
+                node: this,
+                timing: {duration: 2000}
+              }
+            }
+          }
+        }
+      },
+
+      showMain: function() {
+        this.fire('show-main');
+      }
+
+    });
+  </script>
+
+</dom-module>

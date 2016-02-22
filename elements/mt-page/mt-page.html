@@ -1,0 +1,144 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+
+<link rel="import" href="../../bower_components/neon-animation/neon-animatable-behavior.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/slide-from-right-animation.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/slide-right-animation.html">
+
+
+<dom-module id="mt-page">
+
+  <style>
+    :host {
+      display: block;
+      font-family: 'Roboto', sans-serif;
+    }
+    .container {
+    } 
+    .content {
+      padding: 56px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .rows {
+      margin: 56px 0;
+    }
+    label {
+      font-size: 18px;
+    } 
+    .icon {
+      max-width:250px;
+    }
+     
+  </style>  
+
+  <template>
+    <paper-header-panel class="flex layout vertical">
+      <paper-toolbar>
+        <div class="title flex">Our Services</div>   
+        <paper-icon-button icon="cancel" on-tap="showMain"></paper-icon-button>   
+      </paper-toolbar>
+        <div class="container">
+          <div style="padding:10px;">
+          <div class="row box box-shadow" style="margin-top:20px;"> 
+            <div class="col-md-12">
+                <div align="center"> 
+                    <h1>The Careers Team</h1>
+                </div>
+                <div class="col-md-12" style="padding:10px;">
+                  <div class="col-md-6" style="padding:10px;">
+                    <h3>Vocational Guidance:</h3>
+                      <ul>
+                        <li>Choosing a career</li>
+                        <li>Career planning</li>
+                        <li>Managing career change</li>
+                      </ul>
+                    <h3>Employability Skills:</h3>
+                      <ul>
+                        <li>Job search</li>
+                        <li>Writing or updating your CV</li>
+                        <li>Completing job applications</li>
+                        <li>Preparing for job interviews</li>
+                        <li>Finding part time employment to complement your studies</li>
+                      </ul>
+                  </div>
+                  <div class="col-md-6" style="padding:10px;">
+                    <h3>Education:</h3>
+                      <ul>
+                        <li>Planning the next stage of your studies</li>
+                        <li>Choosing and applying to Higher Education (University)</li>
+                        <li>Exploring study abroad</li>
+                        <li>Evaluating qualifications from other countries</li>
+                      </ul>
+                    <h3>Volunteering:</h3>
+                      <ul>
+                        <li>Exploring volunteering opportunities</li>
+                        <li>Finding independent work experience opportunities</li>
+                      </ul>
+                  </div>
+                </div>
+            </div> 
+          </div>
+          <div class="row box box-shadow" style="margin-top:20px;"> 
+              <div class="col-md-12">
+                  <div align="center"> 
+                      <h1>Some examples of feedback from our service users:</h1>
+                  </div>
+                  <div class="col-md-12" style="padding:10px;">
+                      <ul>
+                        <li>'All staff are nice and friendly, I feel welcomed when I come in...'</li>
+                        <li>'(My adviser) helped me with so many things, she made my future look brighter, thank you very much'</li>
+                        <li>'It was really good! I was given the information I needed?to keep going with my studies'</li>
+                        <li>'It's an excellent service and I really appreciate the hard work done for me'</li>
+                        <li>'I was very scared to start my University application, but with the support I got from Student
+Services it was easy'</li>
+                        <li>'Thank you for being supportive'</li>
+                        <li>'To a high standard, very helpful'</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          </div>                   
+        </div> 
+    </paper-header-panel> 
+  </template>
+
+  <script>  
+    Polymer({
+
+      is: 'mt-page',
+
+      behaviors: [Polymer.NeonAnimatableBehavior],
+
+      properties: {
+        animationConfig: {
+          value: function() {
+            return {
+              'entry': {
+                name: 'slide-from-right-animation',
+                node: this,
+                timing: {duration: 2000}
+              },
+              'exit': {
+                name: 'slide-right-animation',
+                node: this,
+                timing: {duration: 2000}
+              }
+            }
+          }
+        }
+      },
+
+      showMain: function() {
+        this.fire('show-main');
+      }
+
+    });
+  </script>
+
+</dom-module>

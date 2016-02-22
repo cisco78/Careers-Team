@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Careers Team</title>
+
+    <!-- Mobile --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Web Components -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <!--<script src="bower_components/platinum-sw/service-worker.js"></script>-->
+    <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
+    <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+    <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/platinum-sw/platinum-sw-elements.html"> 
+    <link rel="import" href="elements/main-page/main-page.html">
+    <link rel="import" href="elements/m-page/m-page.html">
+    <link rel="import" href="elements/faq-page/faq-page.html">
+    <link rel="import" href="elements/mr-page/mr-page.html">
+    <link rel="import" href="elements/d-page/d-page.html">
+    <link rel="import" href="elements/mt-page/mt-page.html">
+
+    <link rel="stylesheet" href="main.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    
+    <style> 
+        body {
+        background-image: url("images/career.jpg"); 
+        background-repeat: no-repeat;
+        background-size: cover;
+    }  
+    paper-card {
+    background-color:rgba(255, 255, 255, 0.95);
+    } 
+    paper-item:hover {
+        background-color: #0F7394;
+    }  
+    </style>     
+    
+  </head> 
+
+  <body class="fullbleed layout vertical" unresolved>
+      
+        <platinum-sw-register auto-register>
+          <platinum-sw-cache></platinum-sw-cache>
+        </platinum-sw-register>
+        
+    <template is="dom-bind" id="app">
+      <neon-animated-pages class="flex" selected="[[selected]]">
+        <main-page></main-page>
+        <m-page></m-page>
+        <faq-page></faq-page>
+        <mr-page></mr-page>
+        <d-page></d-page>
+        <mt-page></mt-page>
+      </neon-animated-pages>
+    </template> 
+
+    <script>
+      var app = document.querySelector('#app');
+      app.selected = 0;
+
+      document.addEventListener('show-main', function() {
+        app.selected = 0;
+      });
+
+      document.addEventListener('show-m', function() {
+        app.selected = 1;
+      });
+      
+      document.addEventListener('show-faq', function() {
+        app.selected = 2;
+      });
+      
+      document.addEventListener('show-mr', function() {
+        app.selected = 3;
+      });
+      
+      document.addEventListener('show-D', function() {
+        app.selected = 4;
+      });
+      
+      document.addEventListener('show-mt', function() {
+        app.selected = 5;
+      });
+      
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-57763032-12', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+
+<link rel="import" href="../../bower_components/neon-animation/neon-animatable-behavior.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/slide-from-right-animation.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/slide-right-animation.html">
+
+
+<dom-module id="d-page">
+
+  <style>
+    :host {
+      display: block;
+      font-family: 'Roboto', sans-serif;
+    }
+    .container {
+    } 
+    .content {
+      padding: 56px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .rows {
+      margin: 56px 0;
+    }
+    label {
+      font-size: 18px;
+    } 
+    .icon {
+      max-width:250px;
+    }
+     
+  </style>  
+
+  <template>
+    <paper-header-panel class="flex layout vertical">
+      <paper-toolbar>
+        <div class="title flex">Documents</div>   
+        <paper-icon-button icon="cancel" on-tap="showMain"></paper-icon-button>   
+      </paper-toolbar>
+        <div class="container">
+            <div class="row flex" style="padding:10px;">
+                <div class="col-md-6 flex" style="padding:10px;">        
+                  <paper-card elevation="5" style="padding:5px; margin:10px;" class="crd">
+                         <paper-toolbar><span class="flex"></span><h4>Links</h4><span class="flex"></span></paper-toolbar> 
+                          <div style="padding:10px;" align="left"> 
+                              <paper-item>Confidentiality Agreement<span class="flex"></span><a href="https://drive.google.com/open?id=12hDPPoazo4FSzXPAywPCpndQ98tY5p2PuWWw2dYk-pM" target="_blank"><paper-fab mini icon="icons:assignment"></paper-fab></a></paper-item>
+                              <paper-item>Evaluation Form<span class="flex"></span><a href="https://drive.google.com/open?id=1nxZbsSJYprz6Aa2jn5Pj6UerjL5RQhHV4fLxwTxX0iA" target="_blank"><paper-fab mini icon="icons:assignment"></paper-fab></a></paper-item>
+                              <paper-item>Goals for Mediation<span class="flex"></span><a href="https://drive.google.com/open?id=1vC-_AarzApzA6zY_70IHXnvdXRUWo879HkAP2loWX0I" target="_blank"><paper-fab mini icon="icons:assignment"></paper-fab></a></paper-item>
+                              <paper-item>Guide to Workplace Mediation<span class="flex"></span><a href="https://drive.google.com/open?id=1ke3RsbJlvnkoI5AAPMKdjqSpoavS9kH4z3wkMsXfQMA" target="_blank"><paper-fab mini icon="icons:assignment"></paper-fab></a></paper-item>
+                          </div>
+                  </paper-card> 
+              </div> 
+            </div>
+        </div> 
+    </paper-header-panel> 
+  </template>
+
+  <script>  
+    Polymer({
+
+      is: 'd-page',
+
+      behaviors: [Polymer.NeonAnimatableBehavior],
+
+      properties: {
+        animationConfig: {
+          value: function() {
+            return {
+              'entry': {
+                name: 'slide-from-right-animation',
+                node: this,
+                timing: {duration: 2000}
+              },
+              'exit': {
+                name: 'slide-right-animation',
+                node: this,
+                timing: {duration: 2000}
+              }
+            }
+          }
+        }
+      },
+
+      showMain: function() {
+        this.fire('show-main');
+      }
+
+    });
+  </script>
+
+</dom-module>

@@ -1,0 +1,127 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+
+<link rel="import" href="../../bower_components/neon-animation/neon-animatable-behavior.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/slide-from-right-animation.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/slide-right-animation.html">
+
+
+<dom-module id="m-page">
+
+  <style>
+    :host {
+      display: block;
+      font-family: 'Roboto', sans-serif;
+    }
+    .container {
+    } 
+    .content {
+      padding: 56px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .rows {
+      margin: 56px 0;
+    }
+    label {
+      font-size: 18px;
+    } 
+    .icon {
+      max-width:250px;
+    }
+     
+  </style>  
+
+  <template>
+    <paper-header-panel class="flex layout vertical">
+      <paper-toolbar>
+        <div class="title flex">Mediation</div>   
+        <paper-icon-button icon="cancel" on-tap="showMain"></paper-icon-button>   
+      </paper-toolbar>
+        <div class="container">
+            <div class="row" style="padding:10px;">
+                <div class="col-md-12 box box-shadow" style="margin-top:15px; padding:20px;">
+                    <div align="center">
+                        <h1>MEDIATION AT LEEDS CITY COLLEGE</h1>
+                        <h3>Mediation allows individuals to work through the issues at the route of conflict in a safe and facilitated environment in order to improve and repair relationships.  The process is a non-adversarial method of resolving disputes through dialogue.</h3>
+                        <h3>Our Mediators are impartial and will not take sides. They will work with you to find a way forward and improve working relationships that may have become difficult, for whatever the reason.</h3>
+                    </div>
+                </div>
+                <div class="row box box-shadow" style="margin-top:15px; padding:10px;">
+                    <div class="col-md-6" style="padding:20px;">
+                        <div align="center">
+                            <h2>What circumstances are suitable for mediation?</h2>
+                        </div>
+                        <ul>
+                            <li>conflict between colleagues, teams, or with your manager.</li>
+                            <li>conflict over working practices.</li>
+                            <li>communication difficulties.</li>
+                            <li>repairing working relationships.</li>
+                            <li>recurrent misunderstandings which are causing anxiety.</li>
+                            <li>conflicting perceptions of performance, which can lead to a grievance or accusations of discrimination.</li>
+                            <li>conflict arising out of allegations of discrimination, or unfair or unequal treatment.</li>
+                            <li>an allegation of bullying or harassment.</li>
+                        </ul>
+                    </div> 
+                    <div class="col-md-6" style="padding:20px;">
+                        <div align="center">
+                            <h2>Our Mediation Service incorporates the following key principles:</h2>
+                        </div>
+                        <ul>
+                            <li>Confidentiality:  Mediation is a confidential process, matters discussed during the mediation will not be disclosed to anyone outside the process unless the parties agree to do so.</li>
+                            <li>Impartiality:  We allocate mediators to ensure they are completely independent to each case.  They are an impartial third party with no vested interest in the outcome.</li>
+                            <li>Non-judgmental:  Our mediators do not seek to establish who is right or wrong.</li>
+                            <li>Voluntary and self-determining:  You are free to choose mediation to resolve a dispute, but you are not compelled to do so.  You decide whether or not to attend and stay for the duration of the mediation, and you decide what to agree to at the conclusion of the process.</li>
+                        </ul> 
+                    </div>
+                </div> 
+                <div class="row box box-shadow" style="margin-top:15px; padding:10px;">
+                    <div class="col-md-12" style="padding:20px;">
+                        <h3>Our Mediators are trained to help provide a safe environment where parties can share their feelings and have their say without further damaging the working relationship.</h3>
+                        <h3>We would love to talk to you about how we might be able to help you. It is important that you know that you are not committing yourself to mediation just by contacting us.  Equally, if we approach you to take part in mediation, you are free to decide whether or not to participate.</h3>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </paper-header-panel> 
+  </template>
+
+  <script>  
+    Polymer({
+
+      is: 'm-page',
+
+      behaviors: [Polymer.NeonAnimatableBehavior],
+
+      properties: {
+        animationConfig: {
+          value: function() {
+            return {
+              'entry': {
+                name: 'slide-from-right-animation',
+                node: this,
+                timing: {duration: 2000}
+              },
+              'exit': {
+                name: 'slide-right-animation',
+                node: this,
+                timing: {duration: 2000}
+              }
+            }
+          }
+        }
+      },
+
+      showMain: function() {
+        this.fire('show-main');
+      }
+
+    });
+  </script>
+
+</dom-module>
